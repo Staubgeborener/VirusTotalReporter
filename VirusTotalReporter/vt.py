@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import report_builder
+from VirusTotalReporter import report_builder
 
 import sys
 import requests
