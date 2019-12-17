@@ -5,6 +5,7 @@ Check files or content of folders with the help of the VirusTotal databases (API
 
 VirusTotalReporter is compatible with __Python3__.
 
+You can get your [VirusTotal Public API Key for free](https://support.virustotal.com/hc/en-us/articles/115002088769-Please-give-me-an-API-key).
 
 ------------------
 
@@ -76,7 +77,7 @@ python VirusTotalReporter -g
 | Select Dir (Input)  | Select the directory with multiples file to be checked*      |
 | Output              | Select the output folder                                     |
 | API KEY             | Enter your VirusTotal API key. You can click ``[Save]`` to store the key into .virustotal_api_key. In this case, the .virustotal_api_key file will be loaded everytime and you don't have to enter it again and again       |
-| Delay               | Checkbox: 15 seconds delay after every API call. Read section "__delay__" for more information |
+| Delay               | Checkbox: 15 seconds delay after every API call. Read section [delay](https://github.com/Staubgeborener/VirusTotalReporter#delay) for more information |
 | Start               | Run the process                                     |
 
 \* either file or directory, but NOT both
@@ -90,10 +91,13 @@ The white box further down will give you a small log about the process.
 python VirusTotalReporter [-a APIKEY] [-o OUTPUT] [-i INPUT] [-d]
 ```
 Example with file: ``python VirusTotalReporter -a 64digitsAPIkey -o ./output-folder -i malware.exe`` \
-Example with folder: ``python VirusTotalReporter -a 64digitsAPIkey -o ./output-folder -i ./malware-files``
+Example with folder: ``python VirusTotalReporter -a 64digitsAPIkey -o ./output-folder -i ./malware-files -d``
 
 Note: You have to create the output folder by yourself, VirusTotalReporter will *NOT* create one. Otherwise you get ``FileNotFoundError``.
 
+#### Delay
+In addition: The public API Key is limited to [4 requests per minute](https://developers.virustotal.com/reference#getting-started). That means, if you do more tha 4 requests per minute (i.e. you check a folder with 5 or more files) you will get the API response code 204: "Request rate limit exceeded. You are making more requests than allowed. You have exceeded one of your quotas (minute, daily or monthly). Daily quotas are reset every day at 00:00 UTC.".
+In this case, just use the parameter ``-d`` (CLI) or check the box "Delay" (GUI). After each request, the program will wait 15 seconds until the next request. This makes it possible to check automatically multiple files without getting a response code 204.
 
 ------------------
 
