@@ -26,7 +26,7 @@ pip install -r requirements.txt
 
 ------------------
 
-# Usage
+## Usage
 
 `cd` into the VirusTotalReporter folder:
 ```sh
@@ -42,7 +42,7 @@ Maybe you need root:
 sudo python VirusTotalReporter
 ```
 
-## Parameter
+### Parameter
 ```sh
 usage: VirusTotalReporter [-h] [-a APIKEY] [-o OUTPUT] [-i INPUT] [-d] [-g]
 
