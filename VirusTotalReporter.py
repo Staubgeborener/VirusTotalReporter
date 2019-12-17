@@ -5,7 +5,7 @@ import webbrowser
 import getopt
 from pathlib import Path
 
-from src import vt, information
+from VirusTotalReporter import vt, information
 
 import tkinter
 import tkinter.scrolledtext as scrolledtext
