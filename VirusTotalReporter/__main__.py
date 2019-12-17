@@ -184,7 +184,7 @@ def main():
 
     information.gui_header()
 
-    parser = argparse.ArgumentParser("VirusTotalReporter.py", epilog='Example of use: python VirusTotalReporter.py -a apikey -o ./output -i ./testfile.virus')
+    parser = argparse.ArgumentParser("VirusTotalReporter", epilog='Example of use: python VirusTotalReporter -a apikey -o ./output -i ./testfile.virus')
     parser.add_argument('-a', '--apikey', action='store', dest='apikey', help="API key string")
     parser.add_argument('-o', '--output', action='store', dest='output', help="Name of output folder")
     parser.add_argument('-i', '--input', action='store', dest='input', help="Name of input file OR input folder")
