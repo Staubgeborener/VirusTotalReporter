@@ -44,6 +44,7 @@ sudo python VirusTotalReporter
 ```
 
 ### Parameter
+
 ```sh
 usage: VirusTotalReporter [-h] [-a APIKEY] [-o OUTPUT] [-i INPUT] [-d] [-g]
 
@@ -63,6 +64,7 @@ Example of use: python VirusTotalReporter -a apikey -o ./output -i ./testfile.vi
 
 
 There are two ways to use __VirusTotalReporter__:
+
 ### 1. Use GUI
 
 ```sh
@@ -96,9 +98,11 @@ Example with folder: ``python VirusTotalReporter -a 64digitsAPIkey -o ./output-f
 Note: You have to create the output folder by yourself, VirusTotalReporter will *NOT* create one. Otherwise you get ``FileNotFoundError``.
 
 #### Delay
+
 In addition: The public API Key is limited to [4 requests per minute](https://developers.virustotal.com/reference#getting-started). That means, if you do more tha 4 requests per minute (i.e. you check a folder with 5 or more files) you will get the API response code 204: "Request rate limit exceeded. You are making more requests than allowed. You have exceeded one of your quotas (minute, daily or monthly). Daily quotas are reset every day at 00:00 UTC.".
 In this case, just use the parameter ``-d`` (CLI) or check the box "Delay" (GUI). After each request, the program will wait 15 seconds until the next request. This makes it possible to check automatically multiple files without getting a response code 204.
 
 ------------------
 
 ### Result
+
