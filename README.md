@@ -1,10 +1,7 @@
 # VirusTotalReporter
-
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/Staubgeborener/VirusTotalReporter/blob/master/LICENSE)
 
-## title
-
-text
+Check files or content of folders with the help of the VirusTotal databases (API) and creates a html report at the end for fast malware analyse    
 
 VirusTotalReporter is compatible with __Python3__.
 
@@ -14,9 +11,17 @@ VirusTotalReporter is compatible with __Python3__.
 ## Installation
 
 Clone VirusTotalReporter using `git`:
-
 ```sh
 git clone https://github.com/Staubgeborener/VirusTotalReporter.git
+```
+
+`cd` into the VirusTotalReporter folder:
+```sh
+cd VirusTotalReporter
+```
+Install requirements:
+```sh
+pip install -r requirements.txt
 ```
 
 ------------------
