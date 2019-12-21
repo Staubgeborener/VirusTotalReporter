@@ -74,6 +74,7 @@ There are two ways to use __VirusTotalReporter__:
 ```sh
 python VirusTotalReporter -g
 ```
+(If you have downloaded the executable Windows file, simply double-click the .exe file) 
 
 ![VTR_GUI](https://github.com/Staubgeborener/VirusTotalReporter/blob/master/media/VTR_GUI.png)
 
