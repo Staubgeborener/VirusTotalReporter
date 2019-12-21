@@ -20,7 +20,7 @@ def gui_explanation():
 	return """
        Check files or content of folders with the help of the
   VirusTotal databases (API) and creates a html report at the end
-                     for fast malware analyse    
+                    for fast malware analysis    
 
         >> Can be used with GUI or CLI with parameters <<
 	"""
