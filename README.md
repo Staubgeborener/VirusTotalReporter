@@ -1,7 +1,7 @@
 # VirusTotalReporter
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/Staubgeborener/VirusTotalReporter/blob/master/LICENSE)
 
-Check files or content of folders with the help of the VirusTotal databases (API) and creates a html report at the end for fast malware analyse    
+Check files or content of folders with the help of the VirusTotal databases (API) and creates a html report at the end for fast malware analysis    
 
 VirusTotalReporter is compatible with __Python3__.
 
