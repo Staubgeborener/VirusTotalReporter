@@ -125,8 +125,9 @@ def virustotal_api(api_key, files, output, txt, dir, delay):
 
     if "200" in str(response):
       #create report
-      infile = infile.decode('utf-8')
-      infile_html = "<table border=\"1\"><tr><th>Name</th><td>" + infile + "</td></tr>"
+      infile_old = infile.decode('utf-8')
+      infile = infile_old.replace(" ", "_") #would not link correctly with spaces
+      infile_html = "<table border=\"1\"><tr><th>Name</th><td>" + infile_old + "</td></tr>"
       result_html = json2html.convert(json = json.dumps(response.json(), sort_keys=True, indent=4))
       result_html = result_html[18:] #cut off old table header
 
@@ -156,7 +157,7 @@ def virustotal_api(api_key, files, output, txt, dir, delay):
       else:
         color = "red"
 
-      html = "<a href=./reports/" + infile + ".html target=\"myFrame\"><font color=\"" + color + "\">" + infile + " - " + data_positives + "/" + data_total + "</font></a>"
+      html = "<a href=./reports/" + infile + ".html target=\"myFrame\"><font color=\"" + color + "\">" + infile_old + " - " + data_positives + "/" + data_total + "</font></a>"
 
       f = open(output + reportname, "a")
       f.write (html + '\n')
