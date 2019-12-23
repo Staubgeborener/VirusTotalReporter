@@ -1,5 +1,7 @@
 # VirusTotalReporter
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/Staubgeborener/VirusTotalReporter/blob/master/LICENSE)
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+[![Python 3](https://img.shields.io/badge/python-3-blue.svg)](https://www.python.org/downloads/release/python/)
 
 Check files or content of folders with the help of the VirusTotal databases (API) and creates a html report at the end for fast malware analysis    
 
