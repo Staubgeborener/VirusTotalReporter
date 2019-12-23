@@ -125,6 +125,7 @@ To get a first overview, the files are sorted according to their evaluation in t
 ------------------
 
 ### Still todo
-* beautify GUI
+* beautify GUI (if someone is good at this stuff, go ahead)
 * clean up code
 * add Private API support 
+* maybe add multi-language support
