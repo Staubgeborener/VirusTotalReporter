@@ -111,3 +111,17 @@ In this case, just use the parameter ``-d`` (CLI) or check the box "Delay" (GUI)
 
 ### Result
 
+At the end, an html report (in the format "report_unix-epoch-timestamp.html e.g. report_1577093977.html) is created in the specified output folder. This contains a summary of the previous analysis. Each individual report is located in the output folder in a newly created "reports"-directory.
+
+Important: The html report needs the individual reports in the report folder. E.g. if the html report is copied, the reports folder with the individual files must also be in the same directory.
+
+![VTR_GUI](https://github.com/Staubgeborener/VirusTotalReporter/blob/master/media/VTR_Result.png)
+
+To get a first overview, the files are sorted according to their evaluation in the colors "green" (probably no malware), "orange" (maybe malware) and "red" (quite likely malware) in the left column. Detailed information can be found in the right column.
+
+------------------
+
+### Still todo
+* beautify GUI
+* clean up code
+* add Private API support 
