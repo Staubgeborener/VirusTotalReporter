@@ -87,7 +87,7 @@ def clicked_save(e4, master, txt):
   if not e4.get():
     display = Label(window, text="API key is empty").grid(column=1, row=1)
     btnno = Button(window, text="Ok", command=window.destroy).grid(column=1, row=3)
-  else: 
+  else:
     display = Label(window, text="Truly create a new key?").grid(column=1, row=1)
     #var = master.IntVar()
     btnyes = tkinter.Button(window, text="Yes", command=lambda:clicked_new_api_key(e4.get(), window, txt)).grid(column=1, row=2)
@@ -106,7 +106,6 @@ def clicked_start(api_key, input_file, input_dir, output, txt, delay):
     check = ['input', 'output']
     if not any(x in log for x in check):
       vt.script(api_key, input_file, input_dir, output, txt, delay)
-
       #vt.end(output, txt)
 
 #-------------------------------
@@ -150,8 +149,8 @@ def gui():
   e4 = Entry(master, width=65, justify='center')
   e4.grid(row=3, column=1)
   e4.insert(0,api_key)
-  delay = tkinter.BooleanVar() 
-  Checkbutton(master, text="Delay", variable=delay).grid(row=4, column=3)
+  delay = tkinter.BooleanVar()
+  Checkbutton(master, text="Delay", variable=delay).grid(row=4, column=1)
 
 
   #log
@@ -202,7 +201,7 @@ def main():
 
     args = parser.parse_args()
 
-    #check for apikey, output, input but NO gui 
+    #check for apikey, output, input but NO gui
     if args.apikey and args.output and args.input and not args.gui:
       #no input, just output and CLI = 1
       vt.create_dir("", "", args.output, "1")
