@@ -117,7 +117,9 @@ Important: The html report needs the individual reports in the report folder. E.
 
 ![VTR_GUI](https://github.com/Staubgeborener/VirusTotalReporter/blob/master/media/VTR_Result.png)
 
-To get a first overview, the files are sorted according to their evaluation in the colors "green" (probably no malware), "orange" (maybe malware) and "red" (quite likely malware) in the left column. Detailed information can be found in the right column.
+To get a first overview, the files are sorted according to their evaluation in the colors "green" (probably no malware, < 10%\*), "orange" (maybe malware, between 10% and 33%\*) and "red" (quite likely malware, > 33%\*) in the left column. Detailed information can be found in the right column. This can be changed in the file [.vt.py at line 161](https://github.com/Staubgeborener/VirusTotalReporter/blob/master/VirusTotalReporter/vt.py#L161)
+
+\* based on a percentage calculation of positive analysis against overall analysis
 
 ------------------
 
