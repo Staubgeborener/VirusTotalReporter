@@ -107,8 +107,9 @@ Note: You have to create the output folder by yourself, VirusTotalReporter will 
 
 #### Delay
 
-In addition: The public API Key is limited to [4 requests per minute](https://developers.virustotal.com/reference#getting-started). That means, if you do more tha 4 requests per minute (i.e. you check a folder with 5 or more files) you will get the API response code 204: "Request rate limit exceeded. You are making more requests than allowed. You have exceeded one of your quotas (minute, daily or monthly). Daily quotas are reset every day at 00:00 UTC.".
-In this case, just use the parameter ``-d`` (CLI) or check the box "Delay" (GUI). After each request, the program will wait 15 seconds until the next request. This makes it possible to check automatically multiple files without getting a response code 204.
+In addition: The public API Key is limited to [4 requests per minute](https://developers.virustotal.com/reference#getting-started). That means, if you do more than 4 requests per minute (i.e. you check a folder with 5 or more files) you will get the API response code 204: "Request rate limit exceeded. You are making more requests than allowed. You have exceeded one of your quotas (minute, daily or monthly). Daily quotas are reset every day at 00:00 UTC.".
+In this case, just use the parameter ``-d`` (CLI) or check the box "Delay" (GUI). After each request, the program will wait 15 seconds until the next request. This makes it possible to check automatically multiple files without getting a response code 204. \
+E.g. you have 1.000 files to check but also only the Public API Key. Simply transfer all 1.000 files into a common folder and tick the "Delay" checkbox (or use the `-d` parameter in CLI mode). This will take about ~4 hours, but you don't need a Private API Key.
 
 ------------------
 
