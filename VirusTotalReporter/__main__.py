@@ -150,8 +150,7 @@ def gui():
   e4.grid(row=3, column=1)
   e4.insert(0,api_key)
   delay = tkinter.BooleanVar()
-  Checkbutton(master, text="Delay", variable=delay).grid(row=4, column=1)
-
+  Checkbutton(master, text="Delay", variable=delay).grid(row=4, column=3)
 
   #log
   txt = scrolledtext.ScrolledText(master, wrap=WORD, undo=True, width=100, height=5)
