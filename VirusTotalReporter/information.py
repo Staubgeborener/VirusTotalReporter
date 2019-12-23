@@ -27,5 +27,5 @@ def gui_explanation():
 
 def about():
 	return "\nVirusTotal Reporter\n\nThis program checks files or content of folders with the\n \
-    help of the VirusTotal databases (API) and creates a html report at the end\n for fast malware analyse.\n\n \
+    help of the VirusTotal databases (API) and creates a html report at the end\n for fast malware analysis.\n\n \
     Can be used with GUI or CLI - works with Linux, Mac and Windows.\n\nEric Schröder (c)2019\nstaubgeborener@github"
