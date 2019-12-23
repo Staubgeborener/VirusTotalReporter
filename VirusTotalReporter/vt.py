@@ -13,6 +13,7 @@ from json2html import *
 import os, glob
 from os import listdir
 from os.path import isfile, join
+from functools import partial
 from colorama import Fore, Back
 
 #-------------------------------
@@ -87,11 +88,12 @@ def script(api_key, input_file, input_dir, output, txt, delay):
       files = [f for f in listdir(file) if isfile(join(file, f))]
   else:
       files = file
+  path = file
 
-  virustotal_api(api_key, files, output, txt, isDirectory, delay)
+  virustotal_api(api_key, files, output, txt, isDirectory, delay, path)
 
 #-------------------------------
-def virustotal_api(api_key, files, output, txt, dir, delay):
+def virustotal_api(api_key, files, output, txt, dir, delay, path):
   #use epoch_time for reportname (unambiguously kind of name)
   epoch_time = int(time.time())
   reportname = "/report_" + str(epoch_time) + ".html"
@@ -104,16 +106,22 @@ def virustotal_api(api_key, files, output, txt, dir, delay):
 
   if delay: count = len(files)
 
-  for infile in files:
+  length = len(files)
+  for infile in range(length):
     if delay: count = count - 1
     if dir:
-      head_tail = os.path.split(infile)
+      head_tail = os.path.split(files[infile])
+      file = path + files[infile]
     else:
       head_tail = os.path.split(files)
+      file = files
 
-    #only filename + encoding before hashing
-    infile = str(head_tail[1]).encode('utf-8')
-    md5 = hashlib.md5(infile).hexdigest()
+    #md5 calc
+    with open(file, mode='rb') as f:
+        d = hashlib.md5()
+        for buf in iter(partial(f.read, 128), b''):
+            d.update(buf)
+    md5 = d.hexdigest()
 
     #EICAR-test-file for debugging purpose
     #EICAR = "X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*".encode('utf-8')
@@ -125,8 +133,8 @@ def virustotal_api(api_key, files, output, txt, dir, delay):
 
     if "200" in str(response):
       #create report
-      infile_old = infile.decode('utf-8')
-      infile = infile_old.replace(" ", "_") #would not link correctly with spaces
+      infile_old = str(head_tail[1])
+      infile = infile_old.replace(" ", "_")
       infile_html = "<table border=\"1\"><tr><th>Name</th><td>" + infile_old + "</td></tr>"
       result_html = json2html.convert(json = json.dumps(response.json(), sort_keys=True, indent=4))
       result_html = result_html[18:] #cut off old table header
@@ -176,7 +184,7 @@ def virustotal_api(api_key, files, output, txt, dir, delay):
 
     #hack: 4 requests per minute = 15 seconds delay, so you can check a lot of files without getting errors
     #only delaying, if there is no inquiry left (count > 0; count is number of elements in 'files')
-    if delay and count > 0: 
+    if delay and count > 0:
       log = "Delay: Waiting 15 seconds ...\n" #program may not respond, keep calm
       if txt is not "1":
         txt.insert('insert', log)
