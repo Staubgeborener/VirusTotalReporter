@@ -12,6 +12,9 @@ You can get your [VirusTotal Public API Key for free](https://support.virustotal
 ------------------
 
 ## Installation
+
+See [releases](https://github.com/Staubgeborener/VirusTotalReporter/releases).
+
 ### git (Windows, Linux, macOS)
 Clone VirusTotalReporter using `git`:
 ```sh
@@ -28,7 +31,7 @@ pip install -r requirements.txt
 ```
 
 ### Download Windows executable
-There is also a [windows compiled executable](https://staubgeborener.de/virustotalreporter/) (should work on any windows version, wether 32 bit or 64 bit). \
+There is also a [windows compiled executable](https://github.com/Staubgeborener/VirusTotalReporter/releases) (should work on any windows version, wether 32 bit or 64 bit). \
 SHA1 Hash of VirusTotalReporter.exe: 2DF7B560BEA2CCDBB11A4EF5EEE331B2A054F38B \
 __Note__: This is only the GUI, for instructions look at the section [1. Use GUI](https://github.com/Staubgeborener/VirusTotalReporter#1-use-gui).
 
