@@ -7,7 +7,7 @@ Check files or content of folders with the help of the VirusTotal databases (API
 
 VirusTotalReporter is compatible with __Python3__.
 
-You can get your [VirusTotal Public API Key for free](https://support.virustotal.com/hc/en-us/articles/115002088769-Please-give-me-an-API-key).
+You can get your [VirusTotal API Key for free](https://support.virustotal.com/hc/en-us/articles/115002088769-Please-give-me-an-API-key).
 
 ------------------
 
